@@ -22,10 +22,8 @@ const FooterContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* border-top: 1px solid black; */
   width: 100%;
   padding: 24px 48px;
   color: white;
   background-color: #51a4fb;
-  font-weight: 600;
 `;
