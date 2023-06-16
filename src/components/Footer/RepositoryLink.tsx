@@ -36,7 +36,4 @@ const GithubLogo = styled.img`
   :hover {
     transform: scale(1.1);
   }
-  @media ${device.tablet} {
-    width: 32px;
-  }
 `;
