@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <NavbarContainer>
       <LogoContainer>
-        <Image src="/logo.png" alt="Logo" width={200} height={200} />
+        <Logo src="/logo.png" alt="Logo" />
       </LogoContainer>
       <ButtonsContainer></ButtonsContainer>
     </NavbarContainer>
@@ -24,14 +24,17 @@ const NavbarContainer = styled.div`
   align-items: center;
   width: 100%;
   flex-direction: row;
-  padding: 0 24px;
-  height: 100px;
+  padding: 24px 48px;
 `;
 
 const LogoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+const Logo = styled.img`
+  width: 160px;
 `;
 
 const ButtonsContainer = styled.div`
