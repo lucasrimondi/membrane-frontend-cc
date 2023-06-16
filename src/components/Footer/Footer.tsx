@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "@/utils/mediaQueries";
 import FooterDisclaimer from "./FooterDisclaimer";
 import RepositoryLink from "./RepositoryLink";
 
@@ -26,4 +27,9 @@ const FooterContainer = styled.div`
   padding: 24px 48px;
   color: white;
   background-color: #51a4fb;
+  @media ${device.tablet} {
+    padding: 12px 24px;
+    flex-direction: column;
+    font-size: 14px;
+  }
 `;

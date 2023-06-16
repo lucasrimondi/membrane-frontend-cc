@@ -1,5 +1,5 @@
-import Image from "next/image";
 import styled from "styled-components";
+import { device } from "@/utils/mediaQueries";
 
 const Navbar = () => {
   return (
@@ -25,6 +25,9 @@ const NavbarContainer = styled.div`
   width: 100%;
   flex-direction: row;
   padding: 24px 48px;
+  @media ${device.tablet} {
+    padding: 24px 24px;
+  }
 `;
 
 const LogoContainer = styled.div`
