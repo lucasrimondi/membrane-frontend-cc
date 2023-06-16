@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled from "styled-components";
 import { device } from "@/utils/mediaQueries";
 
@@ -5,7 +6,7 @@ const Navbar = () => {
   return (
     <NavbarContainer>
       <LogoContainer>
-        <Logo src="/logo.png" alt="Logo" />
+        <Image width={160} height={45} src="/logo.png" alt="Logo" />
       </LogoContainer>
       <ButtonsContainer></ButtonsContainer>
     </NavbarContainer>
@@ -34,10 +35,6 @@ const LogoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-const Logo = styled.img`
-  width: 160px;
 `;
 
 const ButtonsContainer = styled.div`
