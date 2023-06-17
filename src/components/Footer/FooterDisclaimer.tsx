@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Break } from "../ReusableComponents";
 
 const FooterDisclaimer = () => {
   return (
@@ -19,5 +20,3 @@ Styles
 const Disclaimer = styled.p`
   text-align: center;
 `;
-
-const Break = styled.br``;

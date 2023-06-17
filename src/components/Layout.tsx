@@ -47,4 +47,5 @@ const Main = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  max-width: 700px;
 `;
