@@ -48,17 +48,23 @@ export default function App({ Component, pageProps }: AppProps) {
         projectId={projectId}
         ethereumClient={ethereumClient}
         themeVariables={{
+          "--w3m-font-family": "Sen",
           "--w3m-button-border-radius": "0",
           "--w3m-accent-color": "#51a4fb",
-          "--w3m-background-color": "#51a4fb",
+          "--w3m-background-color": "white",
           "--w3m-button-hover-highlight-border-radius": "0",
           "--w3m-container-border-radius": "0",
           "--w3m-background-border-radius": "0",
           "--w3m-notification-border-radius": "0",
           "--w3m-text-medium-regular-weight": "normal",
-          "--w3m-text-medium-regular-font-family": "Sen",
           "--w3m-text-medium-regular-letter-spacing": "0",
+          "--w3m-logo-image-url": "/modalLogo.png",
         }}
+        explorerExcludedWalletIds={"ALL"}
+        explorerRecommendedWalletIds={[
+          //"metamask" wallet id
+          "c57ca95b47569778a828d19178114f4db188b89b763c899ba0be274e97267d96",
+        ]}
       />
     </>
   );
