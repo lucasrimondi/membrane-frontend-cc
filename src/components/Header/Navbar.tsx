@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
 import { device } from "@/utils/mediaQueries";
+import WalletConnectionBtns from "./WalletConnectionBtns";
 
 const Navbar = () => {
   return (
@@ -8,7 +9,7 @@ const Navbar = () => {
       <LogoContainer>
         <Image width={160} height={45} src="/logo.png" alt="Logo" />
       </LogoContainer>
-      <ButtonsContainer></ButtonsContainer>
+      <WalletConnectionBtns />
     </NavbarContainer>
   );
 };
@@ -29,17 +30,26 @@ const NavbarContainer = styled.div`
   @media ${device.tablet} {
     padding: 24px 24px;
   }
+  @media ${device.tabletS} {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  @media ${device.mobileS} {
+    padding: 12px 12px;
+  }
+  @media ${device.mobileXS} {
+    padding: 6px 6px;
+  }
 `;
 
 const LogoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-const ButtonsContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
+  @media ${device.tabletS} {
+    margin-bottom: 32px;
+  }
+  @media ${device.mobileL} {
+    margin-bottom: 24px;
+  }
 `;
