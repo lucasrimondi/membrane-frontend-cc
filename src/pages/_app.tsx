@@ -44,7 +44,22 @@ export default function App({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </Layout>
       </WagmiConfig>
-      <Web3Modal projectId={projectId} ethereumClient={ethereumClient} />
+      <Web3Modal
+        projectId={projectId}
+        ethereumClient={ethereumClient}
+        themeVariables={{
+          "--w3m-button-border-radius": "0",
+          "--w3m-accent-color": "#51a4fb",
+          "--w3m-background-color": "#51a4fb",
+          "--w3m-button-hover-highlight-border-radius": "0",
+          "--w3m-container-border-radius": "0",
+          "--w3m-background-border-radius": "0",
+          "--w3m-notification-border-radius": "0",
+          "--w3m-text-medium-regular-weight": "normal",
+          "--w3m-text-medium-regular-font-family": "Sen",
+          "--w3m-text-medium-regular-letter-spacing": "0",
+        }}
+      />
     </>
   );
 }
