@@ -8,20 +8,20 @@ export default function Home() {
 
   return (
     <HomeContainer>
-      <Title>
-        An$wer $urveys.
+      <HomeTitle>
+        Complete $urveys.
         <Break />
         earn token$.
-      </Title>
+      </HomeTitle>
       <HomeText>
         $urveyfi is a decentralized application that allows you to earn rewards
         in $QUIZ by participating in our daily surveys.
       </HomeText>
-      <HomeText>
+      <CtaText>
         To start, please
         <Break />
         <CTA onClick={open}>CONNECT YOUR WALLET</CTA>
-      </HomeText>
+      </CtaText>
     </HomeContainer>
   );
 }
@@ -41,19 +41,19 @@ const HomeContainer = styled.div`
   }
 `;
 
-const Title = styled.h1`
+const HomeTitle = styled.h1`
   font-size: 60px;
   text-align: center;
   text-transform: uppercase;
   margin-top: 0;
   @media ${device.tablet} {
-    font-size: 54px;
+    font-size: 52px;
   }
   @media ${device.mobileL} {
-    font-size: 40px;
+    font-size: 46px;
   }
   @media ${device.mobileS} {
-    font-size: 32px;
+    font-size: 38px;
   }
 `;
 
@@ -63,14 +63,18 @@ const HomeText = styled.p`
   text-align: center;
   @media ${device.tablet} {
     font-size: 26px;
-    margin-top: 52px;
+    margin-top: 48px;
   }
   @media ${device.mobileL} {
     font-size: 22px;
   }
   @media ${device.mobileS} {
-    font-size: 20px;
+    font-size: 18px;
   }
+`;
+
+const CtaText = styled(HomeText)`
+  margin-bottom: 48px;
 `;
 
 const CTA = styled.b`
