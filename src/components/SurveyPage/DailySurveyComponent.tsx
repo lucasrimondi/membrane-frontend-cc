@@ -4,13 +4,10 @@ import { device } from "@/utils/mediaQueries";
 import { Break } from "../ReusableComponents";
 
 const DailySurveyComponent = () => {
-  const { isLoading, isError, data } = useQuery(
-    ["dailySurveyKey"],
-    async () => {
-      const res = await fetch("/api/dailySurvey");
-      return res.json();
-    }
-  );
+  const { isLoading, isError, data } = useQuery(["dailySurvey"], async () => {
+    const res = await fetch("/api/dailySurvey");
+    return res.json();
+  });
 
   if (isLoading) return <SurveyTitle>Loading...</SurveyTitle>;
   if (isError)
