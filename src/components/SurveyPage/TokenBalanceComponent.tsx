@@ -1,11 +1,15 @@
 import { useContext, useEffect } from "react";
 import styled from "styled-components";
-import { ContractContext } from "@/context/ContractProvider";
+import {
+  ContractContext,
+  ContractContextProps,
+} from "@/context/ContractProvider";
 import { device } from "@/utils/mediaQueries";
 
 const TokenBalanceComponent = () => {
-  const { fetchBalance, balance, isBalanceLoading } =
-    useContext(ContractContext);
+  const { fetchBalance, balance, isBalanceLoading } = useContext(
+    ContractContext
+  ) as ContractContextProps;
 
   useEffect(() => {
     fetchBalance();

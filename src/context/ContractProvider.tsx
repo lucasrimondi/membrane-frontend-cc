@@ -1,11 +1,23 @@
-import { createContext, useState } from "react";
+import { createContext, ReactNode, useState } from "react";
 import { useAccount } from "wagmi";
 import ABI from "../abi.json";
 import { readContract } from "@wagmi/core";
 
-export const ContractContext = createContext<any>(undefined);
+export interface ContractContextProps {
+  fetchBalance: () => Promise<void>;
+  balance: any;
+  isBalanceLoading: boolean;
+}
 
-const ContractProvider = (props: any) => {
+export const ContractContext = createContext<ContractContextProps | undefined>(
+  undefined
+);
+
+interface ContractProviderProps {
+  children: ReactNode;
+}
+
+const ContractProvider = ({ children }: ContractProviderProps) => {
   const { address: userAddress } = useAccount();
   const [balance, setBalance] = useState<any>(undefined);
   const [isBalanceLoading, setIsBalanceLoading] = useState<boolean>(false);
@@ -34,7 +46,7 @@ const ContractProvider = (props: any) => {
         isBalanceLoading,
       }}
     >
-      {props.children}
+      {children}
     </ContractContext.Provider>
   );
 };
