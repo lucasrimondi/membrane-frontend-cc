@@ -1,36 +1,22 @@
-import { device } from "@/utils/mediaQueries";
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import styled from "styled-components";
+import { device } from "@/utils/mediaQueries";
 import { Break } from "../ReusableComponents";
 
 const DailySurveyComponent = () => {
-  const [survey, setSurvey] = useState<any>();
-  //inside a useEffect, create a function that will fetch the daily survey from the backend
-  //use the useEffect to call the function
-  //use the useEffect to set the state of the daily survey
-  //use the state to render the daily survey
-  useEffect(() => {
-    const getDailySurvey = async () => {
-      const response = await fetch("/api/dailySurvey");
-      const data = await response.json();
-      console.log(data);
-      setSurvey(data);
-    };
-    try {
-      getDailySurvey();
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
+  const { isLoading, isError, data } = useQuery(["dailySurvey"], async () => {
+    const res = await fetch("/api/dailySurvey");
+    return res.json();
+  });
 
+  if (isLoading) return <SurveyTitle>Loading...</SurveyTitle>;
+  if (isError)
+    return <SurveyTitle>Error ocurred! Please come back later</SurveyTitle>;
   return (
     <DailySurveyContainer>
-      <SurveyTitle>
-        <b>Daily Survey:</b>
-        <Break />
-        {survey?.title}
-      </SurveyTitle>
-      <SurveyImage src={survey?.image} alt="Survey Image" />
+      <SurveyTitle>Daily Survey:</SurveyTitle>
+      <DailySurveyTitle>{data?.title}</DailySurveyTitle>
+      <SurveyImage src={data?.image} alt="Survey Image" />
       <StartSurveyBtn>Start Survey</StartSurveyBtn>
     </DailySurveyContainer>
   );
@@ -56,12 +42,14 @@ const SurveyTitle = styled.h3`
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 48px;
-  > b {
-    text-decoration: underline;
-  }
+  text-decoration: underline;
   @media ${device.tablet} {
     font-size: 24px;
   }
+`;
+
+const DailySurveyTitle = styled(SurveyTitle)`
+  text-decoration: none;
 `;
 
 const SurveyImage = styled.img`
