@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import { device } from "@/utils/mediaQueries";
 import TokenBalanceComponent from "@/components/SurveyPage/TokenBalanceComponent";
-import DailySurvey from "@/components/SurveyPage/DailySurvey";
+import DailySurveyComponent from "@/components/SurveyPage/DailySurveyComponent";
 
 const Survey = () => {
   return (
     <SurveyPageContainer>
       <TokenBalanceComponent />
-      <DailySurvey />
+      <DailySurveyComponent />
     </SurveyPageContainer>
   );
 };
