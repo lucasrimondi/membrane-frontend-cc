@@ -6,13 +6,20 @@ import { useWeb3Modal } from "@web3modal/react";
 import { goerli } from "viem/chains";
 import { useAccount } from "wagmi";
 import { device } from "@/utils/mediaQueries";
+import { useRouter } from "next/router";
 
 const WalletConnectionBtns = () => {
+  const router = useRouter();
   const { setDefaultChain } = useWeb3Modal();
-  const { isDisconnected } = useAccount();
+  const { isDisconnected } = useAccount({
+    onConnect: () => {
+      router.push({ pathname: "/survey" });
+    },
+  });
 
   useEffect(() => {
     setDefaultChain(goerli);
+    router.push({ pathname: "/" });
   }, [isDisconnected]);
 
   return (
@@ -38,6 +45,22 @@ const ButtonsContainer = styled.div`
     margin-right: 12px;
   }
   @media ${device.tabletS} {
-    width: 100%;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    margin-top: 4px;
+    > w3m-network-switch {
+      margin-right: 0;
+      margin-top: 8px;
+    }
+  }
+  @media ${device.mobileM} {
+    margin-top: 0;
+  }
+  @media ${device.mobileXS} {
+    flex-direction: column;
+    > w3m-network-switch {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
   }
 `;

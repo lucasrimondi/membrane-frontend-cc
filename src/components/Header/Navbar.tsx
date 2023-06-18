@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <NavbarContainer>
       <LogoContainer>
-        <Image width={160} height={45} src="/logo.png" alt="Logo" />
+        <Image fill src="/logo.png" alt="Logo" />
       </LogoContainer>
       <WalletConnectionBtns />
     </NavbarContainer>
@@ -31,7 +31,6 @@ const NavbarContainer = styled.div`
     padding: 24px 24px;
   }
   @media ${device.tabletS} {
-    flex-direction: column;
     align-items: flex-start;
   }
   @media ${device.mobileS} {
@@ -46,10 +45,15 @@ const LogoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 160px;
+  height: 45px;
   @media ${device.tabletS} {
     margin-bottom: 32px;
   }
-  @media ${device.mobileL} {
-    margin-bottom: 24px;
+  @media ${device.mobileM} {
+    width: 128px;
+    height: 35px;
   }
 `;
