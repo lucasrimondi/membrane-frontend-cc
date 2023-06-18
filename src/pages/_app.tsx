@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import type { AppProps } from "next/app";
 import "@/styles/globals.css";
 import Layout from "@/components/Layout";
-
 //web3 configs
 import {
   EthereumClient,
@@ -13,6 +12,10 @@ import { Web3Modal } from "@web3modal/react";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { goerli } from "wagmi/chains";
 import ContractProvider from "@/context/ContractProvider";
+//react-query
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+
+const reactQueryClient = new QueryClient();
 
 // 1. Get projectID at https://cloud.walletconnect.com
 const projectId = process.env.NEXT_PUBLIC_PROJECT_ID as string;
@@ -41,11 +44,13 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <WagmiConfig config={wagmiConfig}>
-        <ContractProvider>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </ContractProvider>
+        <QueryClientProvider client={reactQueryClient}>
+          <ContractProvider>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </ContractProvider>
+        </QueryClientProvider>
       </WagmiConfig>
 
       <Web3Modal
