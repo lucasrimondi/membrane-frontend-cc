@@ -1,8 +1,20 @@
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import { useAccount } from "wagmi";
 import styled from "styled-components";
 import { device } from "@/utils/mediaQueries";
 import HomeContent from "@/components/Home/HomeContent";
 
 export default function Home() {
+  const router = useRouter();
+  const { isConnected } = useAccount();
+
+  useEffect(() => {
+    if (isConnected) {
+      router.push({ pathname: "/survey" });
+    }
+  }, [isConnected]);
+
   return (
     <HomeContainer>
       <HomeContent />

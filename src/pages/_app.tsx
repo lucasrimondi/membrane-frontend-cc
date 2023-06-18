@@ -12,6 +12,7 @@ import {
 import { Web3Modal } from "@web3modal/react";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { goerli } from "wagmi/chains";
+import ContractProvider from "@/context/ContractProvider";
 
 // 1. Get projectID at https://cloud.walletconnect.com
 const projectId = process.env.NEXT_PUBLIC_PROJECT_ID as string;
@@ -40,10 +41,13 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <WagmiConfig config={wagmiConfig}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <ContractProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ContractProvider>
       </WagmiConfig>
+
       <Web3Modal
         projectId={projectId}
         ethereumClient={ethereumClient}

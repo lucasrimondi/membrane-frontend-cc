@@ -11,11 +11,7 @@ import { useRouter } from "next/router";
 const WalletConnectionBtns = () => {
   const router = useRouter();
   const { setDefaultChain } = useWeb3Modal();
-  const { isDisconnected } = useAccount({
-    onConnect: () => {
-      router.push({ pathname: "/survey" });
-    },
-  });
+  const { isDisconnected } = useAccount();
 
   useEffect(() => {
     setDefaultChain(goerli);
