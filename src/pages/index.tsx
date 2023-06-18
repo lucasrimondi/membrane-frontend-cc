@@ -1,34 +1,14 @@
 import styled from "styled-components";
 import { device } from "@/utils/mediaQueries";
-import { Break } from "@/components/ReusableComponents";
-import { useWeb3Modal } from "@web3modal/react";
+import HomeContent from "@/components/Home/HomeContent";
 
 export default function Home() {
-  const { open } = useWeb3Modal();
-
   return (
     <HomeContainer>
-      <HomeTitle>
-        Complete $urveys.
-        <Break />
-        earn token$.
-      </HomeTitle>
-      <HomeText>
-        $urveyfi is a decentralized application that allows you to earn rewards
-        in $QUIZ by participating in our daily surveys.
-      </HomeText>
-      <CtaText>
-        To start, please
-        <Break />
-        <CTA onClick={open}>CONNECT YOUR WALLET</CTA>
-      </CtaText>
+      <HomeContent />
     </HomeContainer>
   );
 }
-
-/*
-Styles
-*/
 
 const HomeContainer = styled.div`
   display: flex;
@@ -39,47 +19,4 @@ const HomeContainer = styled.div`
   @media ${device.tablet} {
     padding: 24px 24px;
   }
-`;
-
-const HomeTitle = styled.h1`
-  font-size: 60px;
-  text-align: center;
-  text-transform: uppercase;
-  margin-top: 0;
-  @media ${device.tablet} {
-    font-size: 52px;
-  }
-  @media ${device.mobileL} {
-    font-size: 46px;
-  }
-  @media ${device.mobileS} {
-    font-size: 38px;
-  }
-`;
-
-const HomeText = styled.p`
-  margin-top: 64px;
-  font-size: 30px;
-  text-align: center;
-  @media ${device.tablet} {
-    font-size: 26px;
-    margin-top: 48px;
-  }
-  @media ${device.mobileL} {
-    font-size: 22px;
-  }
-  @media ${device.mobileS} {
-    font-size: 18px;
-  }
-`;
-
-const CtaText = styled(HomeText)`
-  margin-bottom: 48px;
-`;
-
-const CTA = styled.b`
-  color: #51a4fb;
-  cursor: pointer;
-  text-decoration: underline;
-  margin-top: 8px;
 `;
