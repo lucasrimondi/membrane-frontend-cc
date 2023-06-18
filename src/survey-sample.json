@@ -1,0 +1,55 @@
+{
+    "id": 1,
+    "title": "Lorem ipsum dolor sit amet",
+    "image": "https://www.kasandbox.org/programming-images/avatars/aqualine-seedling.png",
+    "questions": [
+        {
+            "text": "Proin bibendum ultrices imperdiet?",
+            "image": "https://www.kasandbox.org/programming-images/avatars/aqualine-sapling.png",
+            "lifetimeSeconds": 10,
+            "options": [
+                {
+                    "text": "1"
+                },
+                {
+                    "text": "2"
+                },
+                {
+                    "text": "3"
+                }
+            ]
+        },
+        {
+            "text": "In quis nisi id justo?",
+            "image": "https://www.kasandbox.org/programming-images/avatars/aqualine-tree.png",
+            "lifetimeSeconds": 5,
+            "options": [
+                {
+                    "text": "1"
+                },
+                {
+                    "text": "2"
+                },
+                {
+                    "text": "3"
+                }
+            ]
+        },
+        {
+            "text": "Curabitur odio ipsum, bibendum quis?",
+            "image": "https://www.kasandbox.org/programming-images/avatars/aqualine-ultimate.png",
+            "lifetimeSeconds": 15,
+            "options": [
+                {
+                    "text": "1"
+                },
+                {
+                    "text": "2"
+                },
+                {
+                    "text": "3"
+                }
+            ]
+        }
+    ]
+}
