@@ -10,15 +10,19 @@ const ContractProvider = (props: any) => {
   const [balance, setBalance] = useState<any>(undefined);
   const [isBalanceLoading, setIsBalanceLoading] = useState<boolean>(false);
 
-  const fetchBalance = async () => {
+  const fetchBalance = async (): Promise<void> => {
     setIsBalanceLoading(true);
-    const data: any = await readContract({
-      address: `0x${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}`,
-      abi: ABI,
-      functionName: "balanceOf",
-      args: [userAddress],
-    });
-    setBalance(data);
+    try {
+      const data = await readContract({
+        address: `0x${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}`,
+        abi: ABI,
+        functionName: "balanceOf",
+        args: [userAddress],
+      });
+      setBalance(data);
+    } catch (error) {
+      console.error("Network error", error);
+    }
     setIsBalanceLoading(false);
   };
 
