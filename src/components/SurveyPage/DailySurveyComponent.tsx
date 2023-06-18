@@ -14,11 +14,8 @@ const DailySurveyComponent = () => {
     return <SurveyTitle>Error ocurred! Please come back later</SurveyTitle>;
   return (
     <DailySurveyContainer>
-      <SurveyTitle>
-        <b>Daily Survey:</b>
-        <Break />
-        {data?.title}
-      </SurveyTitle>
+      <SurveyTitle>Daily Survey:</SurveyTitle>
+      <DailySurveyTitle>{data?.title}</DailySurveyTitle>
       <SurveyImage src={data?.image} alt="Survey Image" />
       <StartSurveyBtn>Start Survey</StartSurveyBtn>
     </DailySurveyContainer>
@@ -45,12 +42,14 @@ const SurveyTitle = styled.h3`
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 48px;
-  > b {
-    text-decoration: underline;
-  }
+  text-decoration: underline;
   @media ${device.tablet} {
     font-size: 24px;
   }
+`;
+
+const DailySurveyTitle = styled(SurveyTitle)`
+  text-decoration: none;
 `;
 
 const SurveyImage = styled.img`
