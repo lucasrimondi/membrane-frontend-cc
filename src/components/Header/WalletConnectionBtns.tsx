@@ -42,7 +42,7 @@ const ButtonsContainer = styled.div`
   }
   @media ${device.tabletS} {
     flex-direction: column-reverse;
-    align-items: flex-end;
+    align-items: center;
     margin-top: 4px;
     > w3m-network-switch {
       margin-right: 0;
@@ -51,12 +51,5 @@ const ButtonsContainer = styled.div`
   }
   @media ${device.mobileM} {
     margin-top: 0;
-  }
-  @media ${device.mobileXS} {
-    flex-direction: column;
-    > w3m-network-switch {
-      margin-top: 0;
-      margin-bottom: 8px;
-    }
   }
 `;
