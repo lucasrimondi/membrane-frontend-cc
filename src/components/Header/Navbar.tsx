@@ -31,7 +31,8 @@ const NavbarContainer = styled.div`
     padding: 24px 24px;
   }
   @media ${device.tabletS} {
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: stretch;
   }
   @media ${device.mobileS} {
     padding: 12px 12px;
@@ -50,10 +51,6 @@ const LogoContainer = styled.div`
   width: 160px;
   height: 45px;
   @media ${device.tabletS} {
-    margin-bottom: 32px;
-  }
-  @media ${device.mobileM} {
-    width: 128px;
-    height: 35px;
+    margin-bottom: 20px;
   }
 `;

@@ -1,11 +1,11 @@
 {
     "id": 1,
-    "title": "Lorem ipsum dolor sit amet",
-    "image": "https://www.kasandbox.org/programming-images/avatars/aqualine-seedling.png",
+    "title": "Animals",
+    "image": "https://i.imgur.com/OB0y6MR.jpg",
     "questions": [
         {
             "text": "Proin bibendum ultrices imperdiet?",
-            "image": "https://www.kasandbox.org/programming-images/avatars/aqualine-sapling.png",
+            "image": "https://i.imgur.com/CzXTtJV.jpg",
             "lifetimeSeconds": 10,
             "options": [
                 {
@@ -21,7 +21,7 @@
         },
         {
             "text": "In quis nisi id justo?",
-            "image": "https://www.kasandbox.org/programming-images/avatars/aqualine-tree.png",
+            "image": "https://farm4.staticflickr.com/3075/3168662394_7d7103de7d_z_d.jpg",
             "lifetimeSeconds": 5,
             "options": [
                 {
@@ -37,7 +37,7 @@
         },
         {
             "text": "Curabitur odio ipsum, bibendum quis?",
-            "image": "https://www.kasandbox.org/programming-images/avatars/aqualine-ultimate.png",
+            "image": "https://farm2.staticflickr.com/1533/26541536141_41abe98db3_z_d.jpg",
             "lifetimeSeconds": 15,
             "options": [
                 {

@@ -14,6 +14,7 @@ import { goerli } from "wagmi/chains";
 import ContractProvider from "@/context/ContractProvider";
 //react-query
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import SurveyFormProvider from "@/context/SurveyFormProvider";
 
 const reactQueryClient = new QueryClient();
 
@@ -46,9 +47,11 @@ export default function App({ Component, pageProps }: AppProps) {
       <WagmiConfig config={wagmiConfig}>
         <QueryClientProvider client={reactQueryClient}>
           <ContractProvider>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
+            <SurveyFormProvider>
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
+            </SurveyFormProvider>
           </ContractProvider>
         </QueryClientProvider>
       </WagmiConfig>
