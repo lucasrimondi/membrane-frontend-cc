@@ -1,8 +1,23 @@
+import useCountdown from "@/hooks/useCountdown";
 import { Option } from "@/interfaces/daily-survey-interfaces";
+import { useEffect } from "react";
 import styled from "styled-components";
 import { DailySurveyTitle } from "../ReusableComponents";
 
-const QuestionComponent = ({ question, index, onChange }: any) => {
+const QuestionComponent = ({
+  question,
+  index,
+  onChange,
+  goToNextQuestion,
+}: any) => {
+  const [counter, countdownClock] = useCountdown(question.lifetimeSeconds);
+
+  useEffect(() => {
+    if (counter === 0) {
+      goToNextQuestion();
+    }
+  }, [counter]);
+
   return (
     <QuestionContainer>
       <QuestionTitle>
@@ -25,7 +40,7 @@ const QuestionComponent = ({ question, index, onChange }: any) => {
         })}
       </AnswersContainer>
       <CountdownContainer>
-        <Countdown>{question.lifetimeSeconds}</Countdown>
+        <Countdown>{countdownClock}</Countdown>
       </CountdownContainer>
     </QuestionContainer>
   );

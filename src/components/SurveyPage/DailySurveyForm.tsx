@@ -25,7 +25,11 @@ const DailySurveyForm = ({ data }: any) => {
       {index === 0 ? (
         <DailySurveyCover data={data} />
       ) : index > 0 && index < totalPagesCount ? (
-        <MultiStep questions={data.questions} step={index} />
+        <MultiStep
+          questions={data.questions}
+          step={index}
+          goToNextQuestion={surveyButtonFunction}
+        />
       ) : (
         <h1>Overview</h1>
       )}
