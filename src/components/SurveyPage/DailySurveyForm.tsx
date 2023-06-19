@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import styled from "styled-components";
 import DailySurveyCover from "./DailySurveyCover";
 import { MultiStep } from "./MultiStep";
+import { OverviewComponent } from "./OverviewComponent";
 
 const DailySurveyForm = ({ data }: any) => {
   const [index, setIndex] = useState(0);
@@ -31,13 +32,16 @@ const DailySurveyForm = ({ data }: any) => {
           goToNextQuestion={surveyButtonFunction}
         />
       ) : (
-        <h1>Overview</h1>
+        <OverviewComponent />
       )}
       <SurveyBtn
         onClick={(e) => {
           e.preventDefault();
           surveyButtonFunction();
         }}
+        disabled={
+          index === totalPagesCount && Object.keys(surveyAnswers).length === 0
+        }
       >
         {index === 0
           ? "Start Survey"
@@ -64,6 +68,10 @@ const SurveyBtn = styled.button`
   border: none;
   font-family: "Sen";
   font-size: 20px;
+  :disabled {
+    background-color: #b3b3b3;
+    cursor: not-allowed;
+  }
 `;
 
 const Form = styled.form`

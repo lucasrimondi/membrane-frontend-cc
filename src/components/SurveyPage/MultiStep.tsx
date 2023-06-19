@@ -12,14 +12,12 @@ export const MultiStep = ({ step, questions, goToNextQuestion }: any) => {
   };
 
   return (
-    <>
-      <QuestionComponent
-        key={step - 1}
-        question={questions[step - 1]}
-        index={step - 1}
-        onChange={updateAnswers}
-        goToNextQuestion={goToNextQuestion}
-      />
-    </>
+    <QuestionComponent
+      key={step - 1}
+      question={questions[step - 1]}
+      index={step - 1}
+      onChange={updateAnswers}
+      goToNextQuestion={goToNextQuestion}
+    />
   );
 };

@@ -43,17 +43,17 @@ const TokenBalance = styled.h2`
   font-size: 32px;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 72px;
+  margin-bottom: 64px;
   @media ${device.tabletS} {
     font-size: 30px;
-    margin-bottom: 70px;
+    margin-bottom: 60px;
   }
   @media ${device.mobileM} {
     font-size: 24px;
-    margin-bottom: 64px;
+    margin-bottom: 58px;
   }
   @media ${device.mobileXS} {
     font-size: 22px;
-    margin-bottom: 50px;
+    margin-bottom: 46px;
   }
 `;

@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import styled from "styled-components";
 import { SurveyTitle } from "../ReusableComponents";
 import DailySurveyForm from "./DailySurveyForm";
-import DailySurveyCover from "./DailySurveyCover";
 
 const DailySurveyComponent = () => {
   const { isLoading, isError, data } = useQuery(["dailySurvey"], async () => {
@@ -16,7 +15,6 @@ const DailySurveyComponent = () => {
 
   return (
     <DailySurveyContainer>
-      {/* <DailySurveyCover data={data} /> */}
       <DailySurveyForm data={data} />
     </DailySurveyContainer>
   );
