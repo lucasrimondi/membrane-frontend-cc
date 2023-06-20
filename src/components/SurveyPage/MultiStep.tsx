@@ -1,11 +1,15 @@
 import { useContext } from "react";
-import { SurveyFormContext } from "@/context/SurveyFormProvider";
+import {
+  SurveyFormContext,
+  SurveyFormContextProps,
+} from "@/context/SurveyFormProvider";
 import { Question } from "@/interfaces/daily-survey-interfaces";
 import QuestionComponent from "./QuestionComponent";
 
 export const MultiStep = ({ step, questions, goToNextQuestion }: any) => {
-  const { surveyAnswers, setSurveyAnswers }: any =
-    useContext(SurveyFormContext);
+  const { surveyAnswers, setSurveyAnswers } = useContext(
+    SurveyFormContext
+  ) as SurveyFormContextProps;
 
   const updateAnswers = (value: number, question: Question) => {
     setSurveyAnswers({ ...surveyAnswers, [question.text]: value });

@@ -1,7 +1,8 @@
 import { createContext, ReactNode, useState } from "react";
 import { useAccount } from "wagmi";
-import ABI from "../abi.json";
 import { readContract } from "@wagmi/core";
+import { formatEther } from "viem";
+import ABI from "../abi.json";
 
 export interface ContractContextProps {
   fetchBalance: () => Promise<void>;
@@ -25,13 +26,13 @@ const ContractProvider = ({ children }: ContractProviderProps) => {
   const fetchBalance = async (): Promise<void> => {
     setIsBalanceLoading(true);
     try {
-      const data = await readContract({
+      const data: any = await readContract({
         address: `0x${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}`,
         abi: ABI,
         functionName: "balanceOf",
         args: [userAddress],
       });
-      setBalance(data);
+      setBalance(formatEther(data));
     } catch (error) {
       console.error("Network error", error);
     }

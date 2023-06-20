@@ -31,7 +31,7 @@ const QuestionComponent = ({
               <Field
                 type="radio"
                 name={question.text}
-                value={option.text}
+                value={index + 1}
                 onChange={(e) => onChange(e.target.value, question)}
               />
               {option.text}
@@ -73,8 +73,7 @@ const QuestionImage = styled.img`
 const AnswersContainer = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100%;
+  align-items: flex-start;
   flex-direction: column;
 `;
 

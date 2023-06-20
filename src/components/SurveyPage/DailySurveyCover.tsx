@@ -1,7 +1,20 @@
+import {
+  SurveyFormContext,
+  SurveyFormContextProps,
+} from "@/context/SurveyFormProvider";
+import { useContext, useEffect } from "react";
 import styled from "styled-components";
 import { DailySurveyTitle, SurveyTitle } from "../ReusableComponents";
 
 const DailySurveyHomeScreen = ({ data }: any) => {
+  const { setSurveyAnswers } = useContext(
+    SurveyFormContext
+  ) as SurveyFormContextProps;
+
+  useEffect(() => {
+    setSurveyAnswers({});
+  }, []);
+
   return (
     <>
       <SurveyTitle>Daily Survey:</SurveyTitle>
