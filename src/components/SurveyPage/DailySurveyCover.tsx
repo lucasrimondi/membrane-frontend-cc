@@ -12,12 +12,13 @@ interface Props {
 }
 
 const DailySurveyHomeScreen: React.FC<Props> = ({ dailySurvey }) => {
-  const { setSurveyAnswers } = useContext(
+  const { setSurveyAnswers, setIsSuccess } = useContext(
     SurveyFormContext
   ) as SurveyFormContextProps;
 
   useEffect(() => {
     setSurveyAnswers({});
+    setIsSuccess(false);
   }, []);
 
   return (

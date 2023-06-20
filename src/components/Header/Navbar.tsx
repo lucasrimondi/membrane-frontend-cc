@@ -1,12 +1,19 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import styled from "styled-components";
 import { device } from "@/utils/mediaQueries";
 import WalletConnectionBtns from "./WalletConnectionBtns";
 
 const Navbar = () => {
+  const router = useRouter();
+
+  const goToHomeScreen = () => {
+    router.push({ pathname: "/" });
+  };
+
   return (
     <NavbarContainer>
-      <LogoContainer>
+      <LogoContainer onClick={goToHomeScreen}>
         <Image fill src="/logo.png" alt="Logo" />
       </LogoContainer>
       <WalletConnectionBtns />
@@ -50,6 +57,7 @@ const LogoContainer = styled.div`
   overflow: hidden;
   width: 160px;
   height: 45px;
+  cursor: pointer;
   @media ${device.tabletS} {
     margin-bottom: 20px;
   }

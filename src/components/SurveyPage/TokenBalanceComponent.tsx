@@ -38,19 +38,10 @@ const TokenBalanceContainer = styled.div`
 `;
 
 const TokenBalance = styled.h2`
-  font-size: 28px;
+  font-size: 24px;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 42px;
-  margin-top: 12px;
-  @media ${device.tabletS} {
-    font-size: 26px;
-    margin-bottom: 40px;
-  }
-  @media ${device.mobileM} {
-    font-size: 24px;
-    margin-bottom: 38px;
-  }
+  margin-bottom: 38px;
   @media ${device.mobileXS} {
     font-size: 22px;
     margin-bottom: 36px;
