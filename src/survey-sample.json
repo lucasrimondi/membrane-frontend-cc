@@ -9,13 +9,13 @@
             "lifetimeSeconds": 10,
             "options": [
                 {
-                    "text": "1"
+                    "text": "1. In pretium sed enim"
                 },
                 {
-                    "text": "2"
+                    "text": "2. Ut ut nisl est"
                 },
                 {
-                    "text": "3"
+                    "text": "3. Duis vel justo at"
                 }
             ]
         },
@@ -25,13 +25,13 @@
             "lifetimeSeconds": 5,
             "options": [
                 {
-                    "text": "1"
+                    "text": "1. Nunc feugiat urna elit"
                 },
                 {
-                    "text": "2"
+                    "text": "2. Nulla facilisi"
                 },
                 {
-                    "text": "3"
+                    "text": "3. Donec euismod"
                 }
             ]
         },
@@ -41,13 +41,13 @@
             "lifetimeSeconds": 15,
             "options": [
                 {
-                    "text": "1"
+                    "text": "1. Aenean posuere facilisis torto"
                 },
                 {
-                    "text": "2"
+                    "text": "2. Cras non elit et"
                 },
                 {
-                    "text": "3"
+                    "text": "3. Interdum et malesuada fame"
                 }
             ]
         }

@@ -1,10 +1,15 @@
 import { useContext } from "react";
-import { SurveyFormContext } from "@/context/SurveyFormProvider";
+import {
+  SurveyFormContext,
+  SurveyFormContextProps,
+} from "@/context/SurveyFormProvider";
 import styled from "styled-components";
 import { device } from "@/utils/mediaQueries";
 
 export const OverviewComponent = () => {
-  const { surveyAnswers }: any = useContext(SurveyFormContext);
+  const { surveyAnswers } = useContext(
+    SurveyFormContext
+  ) as SurveyFormContextProps;
 
   return (
     <OverviewContainer>
@@ -67,6 +72,9 @@ const OverviewAnswerList = styled.ul`
   flex-direction: column;
   width: 100%;
   padding: 12px;
+  @media ${device.tabletS} {
+    padding: 8px;
+  }
 `;
 
 const ListItem = styled.li`
