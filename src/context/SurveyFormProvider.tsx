@@ -17,6 +17,7 @@ export interface SurveyFormContextProps {
   isTxError: boolean;
   setIsTxError: Dispatch<SetStateAction<boolean>>;
   isSuccess: boolean;
+  setIsSuccess: Dispatch<SetStateAction<boolean>>;
 }
 
 export const SurveyFormContext = createContext<
@@ -84,6 +85,7 @@ const SurveyFormProvider = ({ children }: SurveyFormProviderProps) => {
         isTxError,
         setIsTxError,
         isSuccess,
+        setIsSuccess,
       }}
     >
       {children}
