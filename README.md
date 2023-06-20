@@ -13,6 +13,7 @@ This is a solution to a frontend interview challenge. It is a fully responsive w
 - When all the questions are finished (completed or timed out), users should be able to see an overview with all the answers and submit them to the validator contract in order to get their rewards.
 - After the transaction is made, $QUIZ balance is refreshed and a success message is shown. If the transaction fails, an error message is displayed.
 
+Disclaimer: In order to successfully complete the process and submit the answers, users should have in their wallets enough GoerliETH to pay for gas fees. It is possible to obtain GoerliETH for free using this faucet service: [Goerli PoW Faucet](https://goerli-faucet.pk910.de/)
 
 ## Built with 🔧
 
