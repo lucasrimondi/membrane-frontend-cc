@@ -1,8 +1,8 @@
-import useCountdown from "@/hooks/useCountdown";
-import { Option, Question } from "@/interfaces/daily-survey-interfaces";
 import { useEffect } from "react";
 import styled from "styled-components";
+import useCountdown from "@/hooks/useCountdown";
 import { DailySurveyTitle } from "../ReusableComponents";
+import { Option, Question } from "@/interfaces/daily-survey-interfaces";
 
 interface Props {
   question: Question;
@@ -90,11 +90,11 @@ const AnswerLabel = styled.label`
   justify-content: center;
   align-items: center;
   font-size: 20px;
+  cursor: pointer;
 `;
 
 const Field = styled.input`
   margin-right: 12px;
-  cursor: pointer;
 `;
 
 const CountdownContainer = styled.div`
