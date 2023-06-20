@@ -15,8 +15,6 @@ const TokenBalanceComponent = () => {
     fetchBalance();
   }, []);
 
-  console.log("balance", balance);
-
   return (
     <TokenBalanceContainer>
       <TokenBalance>
