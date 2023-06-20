@@ -1,17 +1,22 @@
+import { useContext, useEffect, useState } from "react";
+import styled from "styled-components";
 import {
   SurveyFormContext,
   SurveyFormContextProps,
 } from "@/context/SurveyFormProvider";
-import { useContext, useEffect, useState } from "react";
-import styled from "styled-components";
 import DailySurveyCover from "./DailySurveyCover";
 import { MultiStep } from "./MultiStep";
 import { OverviewComponent } from "./OverviewComponent";
 import SuccessComponent from "./SuccessComponent";
+import { Survey } from "@/interfaces/daily-survey-interfaces";
 
-const DailySurveyForm = ({ data }: any) => {
+interface Props {
+  dailySurvey: Survey;
+}
+
+const DailySurveyForm: React.FC<Props> = ({ dailySurvey }) => {
   const [index, setIndex] = useState(0);
-  const totalPagesCount = data.questions?.length + 1;
+  const totalPagesCount = dailySurvey.questions?.length + 1;
 
   const {
     surveyAnswers,
@@ -27,8 +32,7 @@ const DailySurveyForm = ({ data }: any) => {
       setIndex((prevIndex) => prevIndex + 1);
     } else {
       const answerIdsArray: number[] = Object.values(surveyAnswers);
-      console.log(answerIdsArray);
-      submitAnswers(data.id, answerIdsArray);
+      submitAnswers(dailySurvey.id, answerIdsArray);
     }
   };
 
@@ -45,10 +49,10 @@ const DailySurveyForm = ({ data }: any) => {
       {!isSuccess ? (
         <Form>
           {index === 0 ? (
-            <DailySurveyCover data={data} />
+            <DailySurveyCover dailySurvey={dailySurvey} />
           ) : index > 0 && index < totalPagesCount ? (
             <MultiStep
-              questions={data.questions}
+              questions={dailySurvey.questions}
               step={index}
               goToNextQuestion={surveyButtonFunction}
             />

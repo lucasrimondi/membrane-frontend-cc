@@ -1,12 +1,11 @@
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 import styled from "styled-components";
-
 import { Web3Button, Web3NetworkSwitch } from "@web3modal/react";
 import { useWeb3Modal } from "@web3modal/react";
 import { goerli } from "viem/chains";
 import { useAccount } from "wagmi";
 import { device } from "@/utils/mediaQueries";
-import { useRouter } from "next/router";
 
 const WalletConnectionBtns = () => {
   const router = useRouter();

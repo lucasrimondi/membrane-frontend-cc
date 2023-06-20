@@ -50,7 +50,6 @@ const SurveyFormProvider = ({ children }: SurveyFormProviderProps) => {
         args: [surveyId, answerIds],
         account: userAddress,
       });
-      console.log(hash);
       await fetchTxStatus(hash);
     } catch (error) {
       setIsSubmitting(false);
@@ -64,9 +63,10 @@ const SurveyFormProvider = ({ children }: SurveyFormProviderProps) => {
       const data = await waitForTransaction({
         hash,
       });
-      console.log(data);
-      setIsSubmitting(false);
-      setIsSuccess(true);
+      if (data) {
+        setIsSubmitting(false);
+        setIsSuccess(true);
+      }
     } catch (error) {
       setIsSubmitting(false);
       setIsTxError(true);

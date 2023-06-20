@@ -15,7 +15,7 @@ const DailySurveyComponent = () => {
 
   return (
     <DailySurveyContainer>
-      <DailySurveyForm data={data} />
+      <DailySurveyForm dailySurvey={data} />
     </DailySurveyContainer>
   );
 };

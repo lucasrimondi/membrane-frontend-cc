@@ -34,7 +34,7 @@ const ContractProvider = ({ children }: ContractProviderProps) => {
       });
       setBalance(formatEther(data));
     } catch (error) {
-      console.error("Network error", error);
+      console.error(error);
     }
     setIsBalanceLoading(false);
   };

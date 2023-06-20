@@ -3,10 +3,20 @@ import {
   SurveyFormContext,
   SurveyFormContextProps,
 } from "@/context/SurveyFormProvider";
-import { Question } from "@/interfaces/daily-survey-interfaces";
 import QuestionComponent from "./QuestionComponent";
+import { Question } from "@/interfaces/daily-survey-interfaces";
 
-export const MultiStep = ({ step, questions, goToNextQuestion }: any) => {
+interface Props {
+  step: number;
+  questions: Question[];
+  goToNextQuestion: () => void;
+}
+
+export const MultiStep: React.FC<Props> = ({
+  step,
+  questions,
+  goToNextQuestion,
+}) => {
   const { surveyAnswers, setSurveyAnswers } = useContext(
     SurveyFormContext
   ) as SurveyFormContextProps;

@@ -1,15 +1,22 @@
 import useCountdown from "@/hooks/useCountdown";
-import { Option } from "@/interfaces/daily-survey-interfaces";
+import { Option, Question } from "@/interfaces/daily-survey-interfaces";
 import { useEffect } from "react";
 import styled from "styled-components";
 import { DailySurveyTitle } from "../ReusableComponents";
 
-const QuestionComponent = ({
+interface Props {
+  question: Question;
+  index: number;
+  onChange: (value: number, question: Question) => void;
+  goToNextQuestion: () => void;
+}
+
+const QuestionComponent: React.FC<Props> = ({
   question,
   index,
   onChange,
   goToNextQuestion,
-}: any) => {
+}) => {
   const [counter, countdownClock] = useCountdown(question.lifetimeSeconds);
 
   useEffect(() => {
@@ -32,7 +39,7 @@ const QuestionComponent = ({
                 type="radio"
                 name={question.text}
                 value={index + 1}
-                onChange={(e) => onChange(e.target.value, question)}
+                onChange={(e) => onChange(parseInt(e.target.value), question)}
               />
               {option.text}
             </AnswerLabel>
