@@ -10,7 +10,7 @@ import { writeContract, waitForTransaction } from "@wagmi/core";
 import ABI from "../abi.json";
 
 export interface SurveyFormContextProps {
-  surveyAnswers: {};
+  surveyAnswers: any;
   setSurveyAnswers: Dispatch<SetStateAction<{}>>;
   submitAnswers: (surveyId: number, answerIds: number[]) => Promise<void>;
   isSubmitting: boolean;
