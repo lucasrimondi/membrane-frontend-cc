@@ -26,7 +26,7 @@ export const OverviewComponent = () => {
         })}
         {Object.keys(surveyAnswers).length === 0 && (
           <EmptySurveyMsg>
-            Oops! It seems that you couldn't answer any question. Please try
+            Oops! It seems that you could not answer any question. Please try
             again later.
           </EmptySurveyMsg>
         )}
