@@ -1,38 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+<img width="235" alt="cmlogo" src="https://github.com/lucasrimondi/membrane-frontend-cc/assets/87493125/b218b86b-8b74-4cab-a9ae-2f35112fb1e2">
 
-## Getting Started
+</div>
 
-First, run the development server:
+# $urveyfi - web3 Frontend Challenge
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+This is a solution to a frontend interview challenge. It is a fully responsive web app developed with React, Typescript and NextJS. $urveyfi is a decentralized application that allows you to earn rewards in $QUIZ by participating in daily surveys. This web application presents the following flow: 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Connect Metamask wallet to Goerli testnet (where $QUIZ smart contract is uploaded).
+- After wallet connection, users should be able to se their $QUIZ token balance and the cover of the daily survey with its "Start" button (this survey is fetched from an api created, developed and held inside this same repository using Next routing system and provides the trivia in JSON format).
+- Once the survey starts, every question is displayed individually and available for a limited ammount of time. This parameter is created following the property "lifetimeSeconds" inside the survey's JSON.
+- When all the questions are finished (completed or timed out), users should be able to see an overview with all the answers and submit them to the validator contract in order to get their rewards.
+- After the transaction is made, $QUIZ balance is refreshed and a success message is shown. If the transaction fails, an error message is displayed.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Built with 🔧
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- React with Typescript
+- NextJS for infrastructure
+- [wagmi](https://wagmi.sh/) and [web3modal](https://web3modal.com/) for blockchain integration and wallet connection
+- react-query for managing API fetching and states.
+- Context API for general app's state
+- styled-components
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Installation 💾
 
-To learn more about Next.js, take a look at the following resources:
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Installation:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+`npm install`
 
-## Deploy on Vercel
+To Start Dev Server:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`npm run dev`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Links 🔗
+
+- Deployment on Vercel (live site URL): [Link](https://membrane-frontend-cc-seven.vercel.app/)
+
+## Screenshots 📸
+
+<div align="center">
+<img width="500" alt="1" src="https://user-images.githubusercontent.com/87493125/212553501-f60a7cbc-eeaa-4fa8-a4c8-4ac6ba308d74.png">
+</div>
+<br>
+<div align="center">
+<img width="500" alt="2" src="https://user-images.githubusercontent.com/87493125/212553528-d70ebb79-52ff-49fa-a97d-3f7a352d4dd8.png">
+</div>
+<br>
+<div align="center">
+<img width="500" alt="Captura de Pantalla 2023-01-15 a las 13 30 37" src="https://user-images.githubusercontent.com/87493125/212553549-2eda7773-a62a-4dd1-8c75-25bec1561c51.png">
+</div>
+<br>
+
+## Author 👤
+
+- LinkedIn - [/lucasrimondi](https://www.linkedin.com/in/lucasrimondi/)
