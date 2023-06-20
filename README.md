@@ -15,6 +15,7 @@ This is a solution to a frontend interview challenge. It is a fully responsive w
 
 Disclaimer: In order to successfully complete the process and submit the answers, users should have in their wallets enough GoerliETH to pay for gas fees. It is possible to obtain GoerliETH for free using this faucet service: [Goerli PoW Faucet](https://goerli-faucet.pk910.de/)
 
+
 ## Built with 🔧
 
 - React with Typescript
@@ -33,28 +34,31 @@ Installation:
 
 `npm install`
 
-To Start Dev Server:
+To start dev server:
 
 `npm run dev`
+
 
 ## Links 🔗
 
 - Deployment on Vercel (live site URL): [Link](https://membrane-frontend-cc-seven.vercel.app/)
 
-## Screenshots 📸
+
+## Demo GIFs 📸
 
 <div align="center">
-<img width="500" alt="1" src="https://user-images.githubusercontent.com/87493125/212553501-f60a7cbc-eeaa-4fa8-a4c8-4ac6ba308d74.png">
+<img width="500" alt="1" src="https://github.com/lucasrimondi/membrane-frontend-cc/assets/87493125/57f63035-e859-4542-a660-5ef24ca14728">
 </div>
 <br>
 <div align="center">
-<img width="500" alt="2" src="https://user-images.githubusercontent.com/87493125/212553528-d70ebb79-52ff-49fa-a97d-3f7a352d4dd8.png">
+<img width="500" alt="2" src="https://github.com/lucasrimondi/membrane-frontend-cc/assets/87493125/1cf62573-afeb-4b25-a558-0a19208f745e">
 </div>
 <br>
 <div align="center">
-<img width="500" alt="Captura de Pantalla 2023-01-15 a las 13 30 37" src="https://user-images.githubusercontent.com/87493125/212553549-2eda7773-a62a-4dd1-8c75-25bec1561c51.png">
+<img width="500" alt="3" src="https://github.com/lucasrimondi/membrane-frontend-cc/assets/87493125/55a1cd65-f108-40bd-afc1-9cc73ab5add5">
 </div>
 <br>
+
 
 ## Author 👤
 
