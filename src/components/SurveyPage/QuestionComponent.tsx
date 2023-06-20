@@ -95,6 +95,7 @@ const AnswerLabel = styled.label`
 
 const Field = styled.input`
   margin-right: 12px;
+  cursor: pointer;
 `;
 
 const CountdownContainer = styled.div`
