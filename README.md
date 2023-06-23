@@ -8,7 +8,7 @@
 This is a solution to a frontend interview challenge. It is a fully responsive web app developed with React, Typescript and NextJS. $urveyfi is a decentralized application that allows you to earn rewards in $QUIZ by participating in daily surveys. This web application presents the following flow: 
 
 - Connect Metamask wallet to Goerli testnet (where $QUIZ smart contract is uploaded).
-- After wallet connection, users should be able to se their $QUIZ token balance and the cover of the daily survey with its "Start" button (this survey is fetched from an api created, developed and held inside this same repository using Next routing system and provides the trivia in JSON format).
+- After wallet connection, users should be able to see their $QUIZ token balance and the cover of the daily survey with its "Start" button (this survey is fetched from an api created, developed and held inside this same repository using Next routing system and provides the trivia in JSON format).
 - Once the survey starts, every question is displayed individually and available for a limited ammount of time. This parameter is created following the property "lifetimeSeconds" inside the survey's JSON.
 - When all the questions are finished (completed or timed out), users should be able to see an overview with all the answers and submit them to the validator contract in order to get their rewards.
 - After the transaction is made, $QUIZ balance is refreshed and a success message is shown. If the transaction fails, an error message is displayed.
